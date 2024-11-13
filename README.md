@@ -31,4 +31,6 @@ required ai models:
 
 note:
 
-the ai is not stable for some of the game because it cant move the camera
+the bot is not stable for some game because it might not be able to move the camera
+
+I WILL NOT BE REPONSABLE FOR ANYTHING WITH THE BOT
