@@ -6,7 +6,7 @@ player-gpt is a bot that meant to play the video games by itself.
 
 
 
-the required libs:
+the required library's:
 
   pyautogui
   
