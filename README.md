@@ -8,7 +8,9 @@ the required libs:
   pynput
   
   transformers
-
+  
+  keyboard
+  
 required ai models:
 
   openai/clip-vit-base-patch32
