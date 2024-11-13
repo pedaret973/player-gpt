@@ -1,5 +1,5 @@
 # player-gpt
-player-gpt is a project that meant to play the video games by itself.
+player-gpt is a bot that meant to play the video games by itself.
 
 
 
