@@ -33,4 +33,4 @@ notes:
 
 the bot is not stable for some game because it might not be able to move the camera.
 
-I WILL NOT BE RESPONSIBLE FOR ANYTHING WITH THE BOT.
+I WILL NOT BE RESPONSIBLE FOR ANYTHING YOU DO WITH THE BOT.
