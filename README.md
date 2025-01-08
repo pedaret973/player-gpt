@@ -25,7 +25,11 @@ required ai models:
 
   openai/clip-vit-base-patch32
 
-
+how to use:
+  1.open your fav game
+  2.run the code
+  3.let the ai play
+to stop the ai hold v and b
 
 
 
