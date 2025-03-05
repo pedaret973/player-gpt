@@ -3,28 +3,32 @@ from pynput.keyboard import Key, Controller
 import pyautogui
 import time
 import keyboard
+import ctypes
+user32 = ctypes.windll.user32
+user32.SetProcessDPIAware()
 simulate_key = Controller()
-#if 'with keyboard' variable is 1 and 'with mouse' variable is 0 it will use the a/d button to rotate the camera of the game
-#if 'with mouse' variable is 1 and 'with keyboard' variable is 0 it will use mouse to rotate the camera of the game
+def move_mouse_raw(dx, dy):
+    """Moves the mouse using raw input (relative movement)."""
+    ctypes.windll.user32.mouse_event(0x0001, dx, dy, 0, 0)
+
 with_keyboard = 0
 with_mouse = 1
-option_detector = pipeline("zero-shot-image-classification", model="openai/clip-vit-base-patch32") #selecting the model
-
+option_detector = pipeline("zero-shot-image-classification", model="openai/clip-vit-base-patch32") 
+print('ai starting in 1 second')
+time.sleep(1)
 while True:
-    screenshot = pyautogui.screenshot('screenshot.png')#getting screenshot
-    image = 'screenshot.png' #selecting the screenshot
-    options = ['should insult','should greet', 'should look left', 'should look right','should move backward','should move forward', 'should attack'] #ai's options
+    screenshot = pyautogui.screenshot('screenshot.png')
+    image = 'screenshot.png' 
+    options = ['should look left', 'should look right','should move backward','should move forward'] #ai's options
 
 
-    results = option_detector(image, candidate_labels=options) #detects what is the 'best option' to do
+    results = option_detector(image, candidate_labels=options) 
 
     results_labels = [result['label'] for result in results]
     ai_choosen_action = results_labels[0]
     print(ai_choosen_action)
+    
 
-
-    #the actions that ai can do
-    #if you want to add a action it recommended to add 'should' at the beginning
     if results_labels[0] == 'should move forward':
         simulate_key.press('w')
         time.sleep(0.2)
@@ -39,16 +43,18 @@ while True:
             time.sleep(0.2)
             simulate_key.release('a')
         elif with_mouse == 1:
-            pyautogui.moveRel(-500, 0)
+            move_mouse_raw(-250, 0)
     if results_labels[0] == 'should look right':
         if with_keyboard == 1:
             simulate_key.press('d')
             time.sleep(0.2)
             simulate_key.release('d')
         elif with_mouse == 1:
-            pyautogui.moveRel(500, 0)
-    if results_labels[0] == 'should attack':
+            move_mouse_raw(250, 0)
+    if results_labels[0] == 'should swing crowbar':
         pyautogui.click()
+    else:
+        pass
     if results_labels[0] == 'should greet':
         pyautogui.press('y')
         pyautogui.write('hello there!')
