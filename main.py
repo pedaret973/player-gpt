@@ -51,7 +51,7 @@ while True:
             simulate_key.release('d')
         elif with_mouse == 1:
             move_mouse_raw(250, 0)
-    if results_labels[0] == 'should swing crowbar':
+    if results_labels[0] == 'attack':
         pyautogui.click()
     else:
         pass
