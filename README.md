@@ -6,7 +6,7 @@ player-gpt is a bot that meant to play the video games by itself.
 
 
 
-the required library's:
+- the required librarys
 
   pyautogui
   
@@ -16,16 +16,22 @@ the required library's:
   
   keyboard
 
+- todo
+
+- [x] ai play
+- [ ] ai chat in game
+- [ ] ai objective
+
 
 
 
 
   
-required ai models:
+- required ai models
 
   openai/clip-vit-base-patch32
 
-how to use:
+- how to use
 
   1.open your fav game
   
@@ -33,10 +39,9 @@ how to use:
   
   3.let the ai play
   
-to stop the ai hold v and b
+- to stop the ai hold v and b
 
 
-
-notes:
+- notes
 
 I WILL NOT BE RESPONSIBLE FOR ANYTHING YOU DO WITH THE BOT.
