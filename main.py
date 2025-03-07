@@ -8,7 +8,6 @@ user32 = ctypes.windll.user32
 user32.SetProcessDPIAware()
 simulate_key = Controller()
 def move_mouse_raw(dx, dy):
-    """Moves the mouse using raw input (relative movement)."""
     ctypes.windll.user32.mouse_event(0x0001, dx, dy, 0, 0)
 
 with_keyboard = 0
@@ -19,7 +18,7 @@ time.sleep(1)
 while True:
     screenshot = pyautogui.screenshot('screenshot.png')
     image = 'screenshot.png' 
-    options = ['should look left', 'should look right','should move backward','should move forward'] #ai's options
+    options = ['should look left', 'should look right','should move backward','should move forward'] 
 
 
     results = option_detector(image, candidate_labels=options) 
@@ -28,7 +27,7 @@ while True:
     ai_choosen_action = results_labels[0]
     print(ai_choosen_action)
     
-
+    hi :D
     if results_labels[0] == 'should move forward':
         simulate_key.press('w')
         time.sleep(0.2)
