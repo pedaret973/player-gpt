@@ -21,8 +21,7 @@ player-gpt is a bot that meant to play the video games by itself.
 - [x] ai play
 - [ ] ai chat in game
 - [ ] ai objective
-
-
+- [ ] text level ai gf
 
 
 
